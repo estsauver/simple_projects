@@ -46,8 +46,8 @@ helper = abortOption ShowHelpText $ mconcat
   , help "Show this help text"
   , hidden ]
 
-greet :: FloorOpts -> IO () 
-greet FloorOpts{width = w,  height = h,  cost = c } = print $ w * h * c
+calcCost :: FloorOpts -> IO () 
+calcCost FloorOpts{width = w,  height = h,  cost = c } = print $ w * h * c
 
 main :: IO ()
-main =  execParser opts >>= greet
+main =  execParser opts >>= calcCost
